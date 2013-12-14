@@ -20,8 +20,7 @@ var app = connect();
 var server = viceroyRestServer(app);
 viceroy.use(server.middleware());
 
-
-require('./person');
+require('./models/person');
 
 // load a people resource
 server.loadRoutes(function(router) {
