@@ -1,7 +1,7 @@
 {
   "name": "viceroy-rest-playground",
   "version": "0.0.0",
-  "description": "",
+  "description": "A demo of Viceroy-NeDB, Viceroy-Rest and Viceroy-Rest-Server",
   "main": "index.js",
   "scripts": {
     "test": "",
