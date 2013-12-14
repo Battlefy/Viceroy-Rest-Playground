@@ -20,6 +20,9 @@ var app = connect();
 var server = viceroyRestServer(app);
 viceroy.use(server.middleware());
 
+
+require('./person');
+
 // load a people resource
 server.loadRoutes(function(router) {
   router.resource('people');
@@ -31,3 +34,4 @@ viceroy.connect(function() {
   // bind the web server to port 8000
   app.listen(8000);
 });
+
