@@ -2,13 +2,13 @@
   "name": "viceroy-rest-playground",
   "version": "0.0.0",
   "description": "A demo of Viceroy-NeDB, Viceroy-Rest and Viceroy-Rest-Server",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "",
+    "build": "./node_modules/.bin/browserify client.js > public/app.js",
+    "watch": "./node_modules/.bin/watchify client.js -o public/app.js",
     "start": "node server.js",
-    "watch-server": "./node_modules/.bin/nodemon -w node server.js",
-    "build-js": "./node_modules/.bin/browserify client.js > public/app.js",
-    "watch": "./node_modules/.bin/watchify client.js -o public/app.js"
+    "start-watch": "./node_modules/.bin/nodemon -w"
   },
   "repository": "",
   "author": "",
@@ -19,11 +19,17 @@
     "viceroy-rest-server": "~0.1.0",
     "connect": "~2.12.0",
     "viceroy-nedb": "0.0.1",
-    "hyperglue": "~1.3.0"
+    "hyperglue": "~1.3.0",
+    "brfs": "0.0.8"
   },
   "devDependencies": {
     "watchify": "~0.4.1",
     "browserify": "~3.2.2",
     "nodemon": "~0.7.10"
+  },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
   }
 }

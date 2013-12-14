@@ -1,7 +1,7 @@
 var viceroy = require('viceroy');
 var util = require('util');
 
-// create and register the Persion model
+// create and register the Person model
 function Person() {
   viceroy.Model.apply(this, arguments);
   this.schema({
