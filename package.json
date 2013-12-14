@@ -1,0 +1,27 @@
+{
+  "name": "viceroy-rest-playground",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "start": "node server.js",
+    "watch-server": "node server.js",
+    "build-js": "./node_modules/.bin/browserify client.js > public/app.js",
+    "watch": "./node_modules/.bin/watchify client.js -o public/app.js"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "viceroy": "~1.5.0",
+    "viceroy-rest": "0.0.2",
+    "viceroy-rest-server": "~0.1.0",
+    "connect": "~2.12.0",
+    "viceroy-mongo": "~0.2.2"
+  },
+  "devDependencies": {
+    "browserify": "~3.2.2",
+    "nodemon": "~0.7.10"
+  }
+}
