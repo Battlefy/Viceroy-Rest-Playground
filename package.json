@@ -18,7 +18,8 @@
     "viceroy-rest": "0.0.2",
     "viceroy-rest-server": "~0.1.0",
     "connect": "~2.12.0",
-    "viceroy-nedb": "0.0.1"
+    "viceroy-nedb": "0.0.1",
+    "hyperglue": "~1.3.0"
   },
   "devDependencies": {
     "watchify": "~0.4.1",
