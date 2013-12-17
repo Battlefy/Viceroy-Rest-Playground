@@ -14,9 +14,9 @@
   "author": "",
   "license": "BSD",
   "dependencies": {
-    "viceroy": "~1.5.0",
-    "viceroy-rest": "0.0.2",
-    "viceroy-rest-server": "~0.1.0",
+    "viceroy": "~1.5.1",
+    "viceroy-rest": "~0.0.4",
+    "viceroy-rest-server": "~0.1.2",
     "connect": "~2.12.0",
     "viceroy-nedb": "0.0.1",
     "hyperglue": "~1.3.0",
