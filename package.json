@@ -22,7 +22,8 @@
     "hyperglue": "~1.3.0",
     "brfs": "0.0.8",
     "ractive": "git://github.com/RactiveJS/Ractive.git#v0.3.8",
-    "domnode-dom": "0.0.3"
+    "domnode-dom": "0.0.3",
+    "connect-browser": "0.0.1"
   },
   "devDependencies": {
     "watchify": "~0.4.1",
@@ -33,5 +34,8 @@
     "transform": [
       "brfs"
     ]
+  },
+  "browser": {
+    "connect": "connect-browser"
   }
 }

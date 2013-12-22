@@ -1,6 +1,5 @@
-var reconnect = require('./re-connect');
+var reconnect = require('connect');
 var client = require('./client');
 
 var app = reconnect();
-
 client(app)
