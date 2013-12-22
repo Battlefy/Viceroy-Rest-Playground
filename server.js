@@ -3,6 +3,7 @@ var util = require('util');
 var connect = require('connect');
 var viceroy = require('viceroy');
 var viceroyNeDB = require('viceroy-nedb');
+var client = require('./client');
 
 // libs
 var viceroyRestServer = require('viceroy-rest-server');
@@ -30,6 +31,7 @@ server.loadRoutes(function(router) {
 // setup the db connection
 viceroy.connect(function() {
   app.use(connect.static(__dirname + '/public'));
+  client(app)
   // bind the web server to port 8000
   app.listen(8000);
 });
