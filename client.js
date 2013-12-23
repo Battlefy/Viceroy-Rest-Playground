@@ -25,8 +25,8 @@ module.exports = function(app, cb) {
     var router = new Router({
       app: app,
       routes: {
-        '/herp': function(req, res, next) {
-          res.write('herp');
+        '/herp/:id': function(req, res, next) {
+          res.write('herp ' + req.params.id);
           res.end();
         },
         '/': function(req, res, next) {

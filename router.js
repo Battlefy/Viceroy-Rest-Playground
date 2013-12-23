@@ -1,5 +1,5 @@
-var appView = require('./views/app');
 var isServer = typeof window === 'undefined';
+var urlrouter = require('urlrouter');
 
 var headerTemplate = [
   "<html>",
@@ -13,7 +13,7 @@ var footerTemplate = [
   "<script type=\"text/javascript\">",
     "(function() {",
       "var po = document.createElement('script'); po.type = 'text/javascript';",
-       "po.async = true; po.src = './app.js';",
+       "po.async = true; po.src = '/app.js';",
       "var s = document.getElementsByTagName('script')[0];",
        "s.parentNode.insertBefore(po, s);",
     "})();",
@@ -26,6 +26,10 @@ function Router(opts) {
   var _this = this;
   this.opts = opts;
   this.app = opts.app;
+  // support regex routes
+  opts.app.use(urlrouter(function(app){
+    _this.app = app;
+  }));
   this.headerTemplate = opts.headerTemplate || headerTemplate;
   this.footerTemplate = opts.footerTemplate || footerTemplate;
 
@@ -50,7 +54,7 @@ Router.prototype._getResponse = function(req, res) {
 
 Router.prototype.route = function(route, callback) {
   var _this = this;
-  _this.app.use(route, function(req, res, next){
+  this.app.get(route, function(req, res, next) {
     res = _this._getResponse(req, res);
     callback(req, res, next);
   });

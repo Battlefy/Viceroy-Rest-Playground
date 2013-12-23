@@ -23,7 +23,8 @@
     "brfs": "0.0.8",
     "ractive": "git://github.com/RactiveJS/Ractive.git#v0.3.8",
     "domnode-dom": "0.0.3",
-    "connect-browser": "0.0.1"
+    "connect-browser": "0.0.2",
+    "urlrouter": "~0.5.4"
   },
   "devDependencies": {
     "watchify": "~0.4.1",

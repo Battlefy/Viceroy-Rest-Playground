@@ -31,8 +31,9 @@ server.loadRoutes(function(router) {
 // setup the db connection
 viceroy.connect(function() {
   app.use(connect.static(__dirname + '/public'));
-  client(app)
+  client(app, function() {
+    app.listen(8000);
+  })
   // bind the web server to port 8000
-  app.listen(8000);
 });
 
