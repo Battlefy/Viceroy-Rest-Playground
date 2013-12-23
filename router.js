@@ -1,5 +1,6 @@
 var isServer = typeof window === 'undefined';
 var urlrouter = require('urlrouter');
+var firstBoot = true;
 
 var headerTemplate = [
   "<html>",
@@ -55,8 +56,13 @@ Router.prototype._getResponse = function(req, res) {
 Router.prototype.route = function(route, callback) {
   var _this = this;
   this.app.get(route, function(req, res, next) {
+    if(firstBoot && !isServer){
+      firstBoot = false;
+      return
+    }
     res = _this._getResponse(req, res);
     callback(req, res, next);
+    firstBoot = false;
   });
 }
 
